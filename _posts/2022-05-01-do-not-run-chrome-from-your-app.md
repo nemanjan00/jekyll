@@ -46,6 +46,8 @@ Now imagine you have just implemented NFC or QRcode reader...
 
 You did not check url format, you passed it to chromium as url...
 
+![](/assets/rfid.png)
+
 ## Real danger example 2 (RSS reader/Mail client)
 
 What happens if you want to open link you just took from XML or JSON and you trust it is valid link?
