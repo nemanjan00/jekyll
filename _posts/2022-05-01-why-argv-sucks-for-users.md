@@ -1,7 +1,9 @@
 ---
 layout: post
 title:  "Why argv sucks for users"
+published: true
 ---
+
 There are some conventions and patterns that are part of so much software we are never getting rid of them.
 One of those conventions defines how we pass arguments to applications. 
 

@@ -8,9 +8,13 @@ github_username: nemanjan00
 permalink: /:categories/:year/:month/:day/:title
 
 markdown: kramdown
-theme: minima
+theme: bulma-clean-theme
+
+paginate: 5
+
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 
 # exclude:
 #   - .sass-cache/
