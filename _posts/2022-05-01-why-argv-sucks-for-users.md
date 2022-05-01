@@ -2,6 +2,11 @@
 layout: post
 title:  "Why argv sucks for users"
 published: true
+author: nemanjan00
+image: /assets/blur-bright-business-codes-207580.jpg
+hero_image: /assets/blur-bright-business-codes-207580.jpg
+hero_darken: true
+show_sidebar: true
 ---
 
 There are some conventions and patterns that are part of so much software we are never getting rid of them.
@@ -108,7 +113,7 @@ What if value is multiline?
 
 The point is, there are a lot of edge cases implemented on per application basis.
 
-## Unnamed arguments mess
+## Unnamed arguments monster
 
 Ok, those are simple, just pass them as documented, right?
 
