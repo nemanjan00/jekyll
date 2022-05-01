@@ -8,7 +8,7 @@ github_username: nemanjan00
 permalink: /:categories/:year/:month/:day/:title
 
 markdown: kramdown
-theme: minima
+theme: alembic
 plugins:
   - jekyll-feed
 
