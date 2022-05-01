@@ -56,7 +56,7 @@ We all know `-` is used for short version of argument name and `--` is used for 
 Sure we do, until we do not. There are plenty of programs out there that just use `-`
 for everything.
 
-## The argument value monster
+## The argument name monster
 
 Ok, but we can just try all try versions and be over with it, right, no big deal?
 
