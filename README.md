@@ -1,9 +1,4 @@
-# Jekyll on Render
+# jekyll
 
-This is a minimal [Jekyll](https://jekyllrb.com/) site bootstrapped with the `jekyll new` command.
+Just my blog based off jekyll
 
-The sample app is deployed on Render at https://jekyll.onrender.com.
-
-## Deployment
-
-Follow the guide at https://render.com/docs/deploy-jekyll.
