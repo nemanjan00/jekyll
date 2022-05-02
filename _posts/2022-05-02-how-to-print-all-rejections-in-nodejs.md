@@ -15,13 +15,13 @@ issues debugging it? I wrote a snippet of code to solve that.
 ```javascript
 const promiseProto = new global.Promise(() => {}).__proto__;
 
-const originalCatch = promiseProto.catch;
+const originalCatch = promiseProto.catch; // grab original catch implementation
 
-promiseProto.catch = function(...args) {
+promiseProto.catch = function(...args) { // wrap around catch implementation, to print error
 	const originalCallback = args[0];
 
 	args[0] = (...errArgs) => {
-		console.log(errArgs[0]);
+		console.error(errArgs[0]);
 
 		originalCallback(...errArgs);
 	};
