@@ -53,10 +53,9 @@ Example vulnerable code:
 ```javascript
 const { spawn } = require("child_process");
 const fs = require("fs");
+const ndefLibrary = require('ndef-lib');
 
 spawn("nfc-mfultralight", ["r", "dump"]).on("close", () => {
-	const ndefLibrary = require('ndef-lib');
-
 	const data = fs.readFileSync("./dump").slice(18);
 
 	const message = new ndefLibrary.NdefMessage.fromByteArray(data);
