@@ -3,6 +3,8 @@ layout: post
 title:  "Decoding CTCSS tone"
 published: true
 author: nemanjan00
+image: /assets/ctcss.jpg
+hero_image: /assets/ctcss.jpg
 hero_darken: true
 show_sidebar: true
 ---
