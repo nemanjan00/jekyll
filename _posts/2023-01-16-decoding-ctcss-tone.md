@@ -21,7 +21,7 @@ FM radio repeaters use CTCSS to distinguish transmissions they need to repeat fr
 
 # How can we find out what CTCSS is used for certain repeater?
 
-CTCSS codes for ham radio repeaters should be public knowledge, as this helps to ensure that the repeater can be used by all users in the area. However, if you cannot find the CTCSS code for a particular repeater, one of ways is to figure it out from transmissions intended for that repeater.
+CTCSS codes for ham radio repeaters should be public knowledge, as this helps to ensure that the repeater can be used by all users in the area. However, if you cannot find the CTCSS code for a particular repeater, one of ways is to figure it out from transmissions intended for that repeater using SDR.
 
 A software defined radio (SDR) is a type of radio that can be programmed and controlled with software, rather than hardware components, to listen to and record a specific frequency or range of frequencies. To listen to and record a narrow FM signal, you will need a SDR that is capable of receiving and demodulating the signal, and then a software application that can record the signal to a WAV file. Some SDRs that can do this include the RTL-SDR, HackRF, and AirSpy. Additionally, there are several software applications that can be used to demodulate and record the signal, such as SDR#, GQRX, and CubicSDR.
 
