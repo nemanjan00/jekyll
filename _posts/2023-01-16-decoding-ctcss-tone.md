@@ -34,3 +34,7 @@ When a wav file is opened in Audacity, the audio can be seen as a waveform. In t
 ![Audio signal](/assets/audio_signal.png)
 
 Measuring the time interval of one oscillation of a sinusoid and dividing 1 second by it will give you the frequency of a CTCSS code. This is because in order to determine the frequency of a CTCSS code, you must measure the time it takes for one oscillation of the sinusoidal wave to occur. By dividing 1 second by this time interval, you will be able to calculate the frequency of the CTCSS code.
+
+In this case, duration of single oscillation is around 8.13ms. Dividing 1s or 1000ms by 8.13ms, we get around 123Hz which in this case is exact value set on radio. 
+
+One trick for getting more precise measurement of duration of single oscillation is to measure duration of 10 or 20 of them and calculating single one from that. 
