@@ -26,7 +26,7 @@ promiseProto.catch = function(...args) { // wrap around catch implementation, to
 		originalCallback(...errArgs);
 	};
 
-	originalCatch.apply(this, args);
+	return originalCatch.apply(this, args);
 };
 
 Promise.reject(new Error("Just a terrible error")).catch(() => {
