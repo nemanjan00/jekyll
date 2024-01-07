@@ -12,6 +12,8 @@ RF is like jumping into a pool with cold water. At first, you are like *WTF am I
 
 In this text I will talk how radio is encoding (modulating) data it is sending into RF signal.
 
+Keep in mind a lot of this post is oversimplified, for sake of easier understanding. 
+
 ### Watching waves
 
 At certain point of your life, you have probably stopped to observe behaviour of waves on a calm surface of a water. 
