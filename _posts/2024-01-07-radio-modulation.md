@@ -44,3 +44,19 @@ Speed of movement is preaty obvious, we measure how much distance wave travels i
 Or if we want to express relationship between those two values, we can use what is called a wavelenth. Wavelength is distance wave crosses in the interval of one oscillation.
 
 ![](/assets/water_surface.png)
+
+### Using waves to send messages
+
+Now that we understand some of the properties of waves, we need to figure out how to meaningfully use them. 
+
+What is the simplest thing we can do? 
+
+#### AM modulation
+
+We can "encode" data in how hard we hit the water. If you are familiar with morsecode, you know you can encode each letter in sequences of `-` and `.`, you also need to take a breakbetween letters. 
+
+Imagine that, you are hitting water at predefined intervals, either very hard, very soft or not at all. Somewhere else, where waves reach, someone can measure peaks of waves and determine if you are sending `-`, `.` or space. 
+
+That is what we call AM modulation.
+
+#### FM modulation
