@@ -79,3 +79,4 @@ In reality, FM modulation takes just a periodic wave and analog signal that is b
 PSK = Phase shift keying
 
 Imagine bobbing object is able to teleport, and teleportation distance is based off amplitude of signal that is being modulated. 
+
