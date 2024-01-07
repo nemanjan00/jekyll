@@ -67,3 +67,9 @@ But, what happens if we want to encode more that one character each wave? Well, 
 At this points, it looks like we have new waves with different frequency that is slightly shifted from main frequency. Imagine if it was analog signal we were multiplying, and not simple integers. Now we understand that by multiplying simple wave with different values, we end up with different frequencies. (The more data we encode, we have more width of frequency, or bandwith)
 
 #### FM modulation
+
+Similar principle applies to FM modulation. In case of modulation, we are not changing how hard we are hitting surface of water, we are changing how often we are doing that. 
+
+In reality, FM modulation takes just a periodic wave and analog signal that is being modulated and changes how fast phase of signal changes based off that value. (or how fast object that is bobbing is moving, over time)
+
+![](/assets/fm.png)
