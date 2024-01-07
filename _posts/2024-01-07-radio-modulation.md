@@ -62,6 +62,8 @@ That is what we call AM modulation. This is oversimplified, slow, weird version 
 
 ![](/assets/morse_am.png)
 
+(In reallity we never go to zero, and there always is small amount leftover of carrier)
+
 But, what happens if we want to encode more that one character each wave? Well, this is where things get interesting.
 
 ![](/assets/am_lobes.png)
