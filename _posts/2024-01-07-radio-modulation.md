@@ -37,3 +37,5 @@ How often we hit the surface of water in unit of a time would be a frequency of 
 Speed of movement is preaty obvious, we measure how much distance wave travels in unit of time and that is speed of wave.
 
 Or if we want to express relationship between those two values, we can use what is called a wavelenth. Wavelength is distance wave crosses in the interval of one oscillation.
+
+![](/assets/water_surface.png)
