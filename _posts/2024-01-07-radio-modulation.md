@@ -8,9 +8,9 @@ hero_image: /assets/radio_modulation.jpg
 hero_darken: true
 show_sidebar: true
 ---
-## Radio modulation
-
 RF is like jumping into a pool with cold water. At first, you are like *WTF am I doing*, but, then, you realize, you are already creating some waves... 
+
+In this text I will talk how radio is encoding (modulating) data it is sending into RF signal.
 
 ### Watching waves
 
