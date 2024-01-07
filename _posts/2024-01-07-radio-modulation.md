@@ -61,4 +61,10 @@ That is what we call AM modulation. This is oversimplified, slow, weird version 
 
 ![](/assets/morse_am.png)
 
+But, what happens if we want to encode more that one character each wave? Well, this is where things get interesting.
+
+![](/assets/am_lobes.png)
+
+At this points, it looks like we have new waves with different frequency that is slightly shifted from main frequency. Imagine if it was analog signal we were multiplying, and not simple integers. Now we understand that by multiplying simple wave with different values, we end up with different frequencies. (The more data we encode, we have more width of frequency, or bandwith)
+
 #### FM modulation
