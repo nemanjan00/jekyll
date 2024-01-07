@@ -9,6 +9,8 @@ hero_darken: true
 show_sidebar: true
 ---
 
+RF is like jumping into a pool with cold water. At first, you are like *WTF am I doing*, but, then, you realize, you are already creating some waves... 
+
 ## Radio modulation
 
 ### Watching waves
