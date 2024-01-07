@@ -73,3 +73,9 @@ Similar principle applies to FM modulation. In case of modulation, we are not ch
 In reality, FM modulation takes just a periodic wave and analog signal that is being modulated and changes how fast phase of signal changes based off that value. (or how fast object that is bobbing is moving, over time)
 
 ![](/assets/fm.png)
+
+#### PSK
+
+PSK = Phase shift keying
+
+Imagine bobbing object is able to teleport, and teleportation distance is based off amplitude of signal that is being modulated. 
