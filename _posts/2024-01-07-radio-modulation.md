@@ -14,7 +14,7 @@ At certain point of your life, you have probably stopped to observe behaviour of
 
 Imagine there is a bobbing object somewhere in the middle of that water, creating waves. How are they moving? What is their amplitude? What happens to them as they move away from the source of bobbing? What is the distance between them?
 
-![Photo of an ripple in water](./assets/ripple.jpg)
+![Photo of an ripple in water](/assets/ripple.jpg)
 
 Let's start with answering the questions, one by one.
 
