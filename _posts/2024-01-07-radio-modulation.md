@@ -52,7 +52,7 @@ What is the simplest thing we can do?
 
 #### AM modulation
 
-We can "encode" data in how hard we hit the water. If you are familiar with morsecode, you know you can encode each letter in sequences of `-` and `.`, you also need to take a breakbetween letters. 
+We can "encode" data in how hard we hit the water. For example, if you are familiar with morse code, you know you can encode each letter in sequences of `-` and `.`, you also need to take a break between letters. 
 
 Imagine that, you are hitting water at predefined intervals, either very hard, very soft or not at all. Somewhere else, where waves reach, someone can measure peaks of waves and determine if you are sending `-`, `.` or space. 
 
