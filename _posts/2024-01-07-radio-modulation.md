@@ -57,7 +57,7 @@ We can "encode" data in how hard we hit the water. If you are familiar with mors
 
 Imagine that, you are hitting water at predefined intervals, either very hard, very soft or not at all. Somewhere else, where waves reach, someone can measure peaks of waves and determine if you are sending `-`, `.` or space. 
 
-That is what we call AM modulation.
+That is what we call AM modulation. This is oversimplified, slow, weird version of AM, but, it is AM modulation.
 
 ![](/assets/morse_am.png)
 
