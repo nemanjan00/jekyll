@@ -3,6 +3,9 @@ layout: post
 title:  "Radio modulation"
 published: true
 author: nemanjan00
+image: /assets/radio_modulation.jpg
+hero_image: /assets/radio_modulation.jpg
+hero_darken: true
 show_sidebar: true
 ---
 
