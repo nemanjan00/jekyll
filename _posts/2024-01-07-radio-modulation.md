@@ -59,4 +59,6 @@ Imagine that, you are hitting water at predefined intervals, either very hard, v
 
 That is what we call AM modulation.
 
+![](/assets/morse_am.png)
+
 #### FM modulation
