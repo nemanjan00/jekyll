@@ -10,20 +10,20 @@ The site is hosted on **Render** (`rndr-id` response header) behind Cloudflare (
 
 ## Build / preview
 
-The system Ruby is much newer than `.ruby-version` (3.0.0), and the locked Jekyll 4.2 / sassc gems target 3.0. Build in a matching container:
+Render only supports Ruby versions above 3.1. `.ruby-version` pins 3.3.6, and the system Ruby is newer than that, so build in a matching container:
 
 ```sh
-docker run --rm -v "$PWD":/srv -w /srv ruby:3.0 sh -c 'bundle install --quiet && bundle exec jekyll build -d /tmp/s'
+docker run --rm -v "$PWD":/srv -w /srv ruby:3.3.6 sh -c 'bundle install --quiet && bundle exec jekyll build -d /tmp/s'
 ```
 
-`.bundle/config` sets `BUNDLE_PATH: vendor/bundle`, so the container writes root-owned `vendor/` and `.jekyll-cache/` into the repo (both gitignored). Remove them through docker (`... ruby:3.0 rm -rf vendor .jekyll-cache`), because a plain `rm` fails with permission denied. To preview, build to a directory, serve it with `python -m http.server`, and take screenshots with `chromium --headless --screenshot`.
+`.bundle/config` sets `BUNDLE_PATH: vendor/bundle`, so the container writes root-owned `vendor/` and `.jekyll-cache/` into the repo (both gitignored). Remove them through docker (`... ruby:3.3.6 rm -rf vendor .jekyll-cache`), because a plain `rm` fails with permission denied. To preview, build to a directory, serve it with `python -m http.server`, and take screenshots with `chromium --headless --screenshot`.
 
 No tests or linting.
 
 ## Architecture
 
 - **No gem theme.** The look is a hand-written Dracula theme: `_layouts/` (`default` → `blog`, `post`, `page`), `_includes/` (`head`, `header`, `footer`, `reading-time`, `footer-scripts` = Google Analytics), and a single `assets/css/main.scss` that defines the Dracula palette variables and the Rouge syntax colors. The site is dark-only by design.
-- `bulma-clean-theme` and `minima` are still in the `Gemfile` but unused. They were kept so that Render's lockfile and build stay unchanged. `jekyll-seo-tag` and `jekyll-sitemap` come in as dependencies of bulma-clean-theme, so removing that gem means adding them to the `Gemfile` directly.
+- Jekyll 4.4 compiles Sass with `sass-embedded` (Dart Sass), so no native extension has to be built. Plugins are listed in both the `Gemfile` and `_config.yml` `plugins:`.
 - `index.html` uses `layout: blog`, which uses `jekyll-paginate` (5 posts per page, `/pageN/`). Pagination only works in `index.html`.
 - Permalinks are `/:categories/:year/:month/:day/:title` with no `.html` in canonical URLs. Keep them stable, because existing links depend on them.
 
