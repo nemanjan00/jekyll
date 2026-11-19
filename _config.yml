@@ -8,22 +8,26 @@ github_username: nemanjan00
 permalink: /:categories/:year/:month/:day/:title
 
 markdown: kramdown
-theme: bulma-clean-theme
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+sass:
+  style: compressed
 
 paginate: 5
 
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - .ruby-version

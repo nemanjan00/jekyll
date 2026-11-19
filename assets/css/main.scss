@@ -1,0 +1,385 @@
+---
+---
+// Dracula palette — https://draculatheme.com/contribute
+$bg: #282a36;
+$bg-dark: #21222c;
+$bg-darker: #191a21;
+$line: #44475a;
+$fg: #f8f8f2;
+$comment: #6272a4;
+$cyan: #8be9fd;
+$green: #50fa7b;
+$orange: #ffb86c;
+$pink: #ff79c6;
+$purple: #bd93f9;
+$red: #ff5555;
+$yellow: #f1fa8c;
+
+$sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+$mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: $bg;
+  color: $fg;
+  font: 400 1.0625rem/1.75 $sans;
+  -webkit-font-smoothing: antialiased;
+}
+
+main { flex: 1; }
+
+::selection { background: $line; color: $fg; }
+
+a {
+  color: $pink;
+  text-decoration: none;
+  transition: color .15s;
+  &:hover { color: $purple; }
+}
+
+img { max-width: 100%; height: auto; }
+
+.wrap {
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.accent { color: $purple; }
+
+.meta {
+  font: 400 .8125rem/1.5 $mono;
+  color: $comment;
+  .dot { margin: 0 .4em; }
+}
+
+// Header / footer
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba($bg-dark, .85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid $line;
+
+  .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    height: 3.5rem;
+  }
+}
+
+.brand {
+  font: 700 1.05rem $mono;
+  color: $fg;
+  .prompt { color: $green; }
+  .cursor { color: $purple; animation: blink 1.1s steps(1) infinite; }
+  &:hover { color: $fg; }
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.site-nav {
+  display: flex;
+  gap: 1.25rem;
+  font: 400 .875rem $mono;
+  a {
+    color: $comment;
+    &:hover, &.active { color: $cyan; }
+  }
+}
+
+.site-footer {
+  margin-top: 4rem;
+  border-top: 1px solid $line;
+  background: $bg-dark;
+  font: 400 .8125rem $mono;
+  color: $comment;
+  .wrap { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+  .sep { margin: 0 .6em; color: $line; }
+  a { color: $comment; &:hover { color: $cyan; } }
+}
+
+// Blog index
+
+.intro {
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
+  h1 { margin: 0 0 .25rem; font: 700 2.25rem/1.2 $mono; letter-spacing: -.02em; }
+  p { margin: 0; color: $comment; }
+}
+
+.post-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: $bg-dark;
+  border: 1px solid $line;
+  border-radius: 12px;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+
+  &:hover {
+    border-color: $purple;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -12px rgba($purple, .35);
+  }
+
+  .card-image {
+    display: block;
+    aspect-ratio: 21 / 8;
+    overflow: hidden;
+    background: $bg-darker;
+    img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: .85; transition: opacity .2s; }
+  }
+  &:hover .card-image img { opacity: 1; }
+
+  .card-body { padding: 1.25rem 1.5rem 1.5rem; }
+
+  h2 {
+    margin: .35rem 0 .5rem;
+    font: 700 1.35rem/1.35 $sans;
+    letter-spacing: -.01em;
+    a { color: $fg; &:hover { color: $purple; } }
+  }
+
+  p { margin: 0 0 .75rem; color: rgba($fg, .78); font-size: .975rem; }
+
+  .more { font: 400 .8125rem $mono; color: $green; &:hover { color: $cyan; } }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  font: 400 .875rem $mono;
+  .page { color: $comment; }
+  a {
+    padding: .45rem .9rem;
+    border: 1px solid $line;
+    border-radius: 8px;
+    color: $fg;
+    &:hover { border-color: $purple; color: $purple; }
+  }
+}
+
+// Post
+
+.post-header {
+  position: relative;
+  overflow: hidden;
+  padding: 3.5rem 0 2rem;
+
+  h1 {
+    margin: .5rem 0 0;
+    font: 700 clamp(1.9rem, 5vw, 2.75rem)/1.15 $sans;
+    letter-spacing: -.025em;
+  }
+
+  &.has-hero {
+    padding: 8rem 0 2.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid $line;
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .35;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba($bg, .2), $bg);
+    }
+    .wrap { position: relative; z-index: 1; }
+    .meta { color: $cyan; }
+  }
+}
+
+.prose {
+  overflow-wrap: break-word;
+
+  h1, h2, h3, h4 {
+    margin: 2.25rem 0 .75rem;
+    line-height: 1.3;
+    letter-spacing: -.01em;
+    color: $fg;
+  }
+  h1 { font-size: 1.85rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  h4 { font-size: 1.05rem; }
+  h2::before, h3::before {
+    font-family: $mono;
+    color: $purple;
+    margin-right: .4em;
+  }
+  h2::before { content: "##"; }
+  h3::before { content: "###"; }
+
+  p, ul, ol, blockquote, pre, table, figure { margin: 0 0 1.25rem; }
+  ul, ol { padding-left: 1.4rem; }
+  li { margin: .3rem 0; }
+  li::marker { color: $purple; }
+
+  strong { color: $orange; }
+  em { color: $yellow; }
+
+  a {
+    color: $cyan;
+    text-decoration: underline;
+    text-decoration-color: rgba($cyan, .35);
+    text-underline-offset: 3px;
+    &:hover { color: $pink; text-decoration-color: $pink; }
+  }
+
+  img {
+    display: block;
+    margin: 1.75rem auto;
+    border-radius: 10px;
+    border: 1px solid $line;
+  }
+
+  blockquote {
+    padding: .75rem 1.25rem;
+    border-left: 3px solid $purple;
+    background: $bg-dark;
+    border-radius: 0 8px 8px 0;
+    color: rgba($fg, .85);
+    p:last-child { margin-bottom: 0; }
+  }
+
+  hr { border: 0; border-top: 1px dashed $line; margin: 2.5rem 0; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    display: block;
+    overflow-x: auto;
+    font-size: .95rem;
+  }
+  th, td { padding: .5rem .75rem; border: 1px solid $line; text-align: left; }
+  th { background: $bg-dark; color: $purple; }
+
+  code {
+    font-family: $mono;
+    font-size: .875em;
+    padding: .15em .4em;
+    border-radius: 5px;
+    background: $bg-darker;
+    color: $green;
+  }
+
+  pre, div.highlight {
+    border-radius: 10px;
+  }
+
+  pre {
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+    background: $bg-darker;
+    border: 1px solid $line;
+    line-height: 1.6;
+    code { padding: 0; background: none; color: $fg; font-size: .85rem; }
+  }
+
+  div.highlight pre, .highlighter-rouge pre { margin: 0; }
+  .highlighter-rouge { margin: 0 0 1.25rem; }
+}
+
+.post-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid $line;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid $line;
+    border-radius: 10px;
+    background: $bg-dark;
+    color: $fg;
+    font-weight: 500;
+    line-height: 1.4;
+    &:hover { border-color: $purple; color: $purple; }
+    small { font: 400 .75rem $mono; color: $comment; }
+  }
+  .next { grid-column: 2; text-align: right; }
+}
+
+.not-found {
+  padding-top: 5rem;
+  text-align: center;
+  h1 { font: 700 5rem/1 $mono; margin: 0 0 1rem; }
+  code { font-family: $mono; color: $red; }
+  a { font-family: $mono; color: $green; }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 1rem; }
+  .site-nav { gap: .9rem; }
+  .intro { padding-top: 2.5rem; h1 { font-size: 1.75rem; } }
+  .card .card-body { padding: 1rem 1.1rem 1.25rem; }
+  .post-header.has-hero { padding-top: 5rem; }
+  .post-nav { grid-template-columns: 1fr; .next { grid-column: 1; } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand .cursor { animation: none; }
+  .card, .card:hover { transition: none; transform: none; }
+}
+
+// Rouge syntax highlighting — Dracula
+.highlight {
+  color: $fg;
+  .c, .ch, .cd, .cm, .cpf, .c1, .cs { color: $comment; font-style: italic; }
+  .err { color: $red; }
+  .k, .kd, .kn, .kp, .kr, .kv, .ow { color: $pink; }
+  .kc { color: $purple; }
+  .kt { color: $cyan; font-style: italic; }
+  .o { color: $pink; }
+  .p { color: $fg; }
+  .s, .sa, .sb, .sc, .dl, .sd, .s2, .se, .sh, .si, .sx, .s1, .ss { color: $yellow; }
+  .sr { color: $red; }
+  .m, .mb, .mf, .mh, .mi, .il, .mo { color: $purple; }
+  .na { color: $green; }
+  .nb, .bp { color: $cyan; font-style: italic; }
+  .nc, .nn, .ne { color: $cyan; }
+  .nf, .fm, .nx { color: $green; }
+  .nt { color: $pink; }
+  .nv, .vc, .vg, .vi, .vm { color: $orange; font-style: italic; }
+  .no { color: $purple; }
+  .nd { color: $green; }
+  .cp { color: $pink; }
+  .gd { color: $red; }
+  .gi { color: $green; }
+  .gh, .gu { color: $purple; font-weight: bold; }
+  .ge { font-style: italic; }
+  .gs { font-weight: bold; }
+  .w { color: $fg; }
+}

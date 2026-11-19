@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<section class="intro wrap">
+  <h1><span class="accent">#</span> {{ page.title | default: site.title }}</h1>
+  <p>{{ site.description }}</p>
+</section>
+
+<section class="wrap post-list">
+  {%- for post in paginator.posts %}
+  <article class="card">
+    {%- if post.image %}
+    <a class="card-image" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+      <img src="{{ post.image | relative_url }}" alt="" loading="lazy">
+    </a>
+    {%- endif %}
+    <div class="card-body">
+      <div class="meta">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+        <span class="dot">&middot;</span>
+        {% include reading-time.html content=post.content %}
+      </div>
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      <p>{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+      <a class="more" href="{{ post.url | relative_url }}">read more &rarr;</a>
+    </div>
+  </article>
+  {%- endfor %}
+</section>
+
+{%- if paginator.total_pages > 1 %}
+<nav class="wrap pagination">
+  {%- if paginator.previous_page %}
+  <a href="{{ paginator.previous_page_path | relative_url }}">&larr; newer</a>
+  {%- else %}<span></span>{% endif %}
+  <span class="page">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+  {%- if paginator.next_page %}
+  <a href="{{ paginator.next_page_path | relative_url }}">older &rarr;</a>
+  {%- else %}<span></span>{% endif %}
+</nav>
+{%- endif %}

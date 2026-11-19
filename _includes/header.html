@@ -1,0 +1,12 @@
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}"><span class="prompt">~/</span>{{ site.title | downcase }}<span class="cursor">_</span></a>
+    <nav class="site-nav">
+      <a href="{{ '/' | relative_url }}"{% if page.url == '/' or paginator.page > 1 %} class="active"{% endif %}>blog</a>
+      {%- for item in site.data.navigation %}
+      <a href="{{ item.link }}">{{ item.name | downcase }}</a>
+      {%- endfor %}
+      <a href="{{ '/feed.xml' | relative_url }}">rss</a>
+    </nav>
+  </div>
+</header>
